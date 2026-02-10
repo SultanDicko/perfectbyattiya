@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boutique - Perfect by Attiyyatoullah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { fem: { light: '#FFF5F7', pink: '#FFD1DC', rose: '#E8A0BF', gold: '#D4AF37', rosegold: '#B76E79', dark: '#5D4037', white: '#FFFFFF' } },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'], script: ['Great Vibes', 'cursive'] },
+                    backgroundImage: { 'rosegold-gradient': 'linear-gradient(135deg, #E8A0BF 0%, #B76E79 100%)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FFF5F7; color: #5D4037; }
+        .btn-fem { background: linear-gradient(135deg, #E8A0BF 0%, #B76E79 100%); color: white; transition: all 0.3s ease; }
+        .btn-fem:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(183, 110, 121, 0.4); }
+        .product-card { background: white; border-radius: 24px; transition: all 0.4s ease; border: 1px solid transparent; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -5px rgba(232, 160, 191, 0.25); border-color: #FFD1DC; }
+        #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+        .desc-list li { margin-bottom: 4px; display: flex; align-items: start; }
+        .desc-list li::before { content: "•"; color: #B76E79; margin-right: 6px; font-weight: bold; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm border-b border-fem-pink/30">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo" class="h-12 w-12 rounded-full object-cover border-2 border-white shadow-md">
+                <span class="font-serif font-bold text-xl text-fem-rosegold">PERFECT</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-fem-dark/80">
+                <a href="index.html" class="hover:text-fem-rosegold transition">Accueil</a>
+                <a href="histoire.html" class="hover:text-fem-rosegold transition">À Propos</a>
+                <a href="boutique.html" class="text-fem-rosegold font-bold border-b-2 border-fem-rosegold">Boutique</a>
+                <a href="conseils.html" class="hover:text-fem-rosegold transition">Conseils</a>
+                <a href="https://wa.me/22663274225" target="_blank" class="btn-fem px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-3xl text-fem-rosegold"><i class="ph ph-list"></i></button>
+        </div>
+        <div id="mobile-menu" class="bg-white/95 backdrop-blur-xl md:hidden border-t border-fem-pink/50">
+            <div class="flex flex-col p-6 space-y-4 text-center font-medium text-fem-dark">
+                <a href="index.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light">Accueil</a>
+                <a href="boutique.html" class="text-fem-rosegold font-bold py-2 border-b border-fem-light">Boutique</a>
+                <a href="conseils.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light">Conseils</a>
+                <a href="https://wa.me/22663274225" target="_blank" class="py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-12 text-center relative">
+        <div class="absolute inset-0 bg-gradient-to-b from-fem-light to-white opacity-50 z-0"></div>
+        <div class="relative z-10 px-6">
+            <span class="text-fem-rosegold font-script text-3xl">La Boutique</span>
+            <h1 class="font-serif text-4xl md:text-5xl font-bold text-fem-dark mt-2">Notre Collection Complète</h1>
+            <p class="text-fem-dark/60 mt-4 max-w-xl mx-auto">Des soins formulés avec amour pour révéler votre éclat naturel.</p>
+        </div>
+    </header>
+
+    <section class="py-12 px-6 bg-white min-h-screen">
+        <div class="container mx-auto">
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <button class="px-6 py-2 rounded-full bg-fem-rosegold text-white text-sm font-bold shadow-md">Tous les produits</button>
+                <button class="px-6 py-2 rounded-full bg-fem-light text-fem-dark border border-fem-pink hover:bg-fem-pink/20 transition text-sm">Savons</button>
+                <button class="px-6 py-2 rounded-full bg-fem-light text-fem-dark border border-fem-pink hover:bg-fem-pink/20 transition text-sm">Soins Corps</button>
+                <button class="px-6 py-2 rounded-full bg-fem-light text-fem-dark border border-fem-pink hover:bg-fem-pink/20 transition text-sm">Soins Visage</button>
+            </div>
+            <div id="shop-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10"></div>
+        </div>
+    </section>
+
+    <footer class="bg-fem-dark text-white py-12 text-center mt-auto rounded-t-[40px]">
+        <div class="container mx-auto px-6">
+             <h3 class="font-serif text-2xl font-bold mb-4 text-fem-pink">Perfect by Attiyyatoullah</h3>
+             <p class="text-white/60 text-sm mb-6">&copy; 2026. Tous droits réservés.</p>
+             <a href="index.html" class="text-fem-rosegold hover:text-white transition text-sm underline">Retour à l'accueil</a>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { name: "Magic Oil Quintos & Vergetures", price: "5 000", image: "produit-magic-oil.jpg", desc: "Huile spécialement conçue à base d'extrait de végétaux et de vitamines afin d'atténuer et d'estomper les quintos et vergetures au fur et à mesure sans agresser la peau." },
+            { name: "Gel Douche Royale", price: "15 000", image: "produit-gel-douche.jpg", desc: `L'hydratation est la base d'une belle peau. Avec une composition spéciale nettoyante, il : <ul class='desc-list mt-2 text-left text-sm'><li>Élimine les impuretés accumulées</li><li>Nourrit et hydrate</li><li>Apaise et protège</li></ul>` },
+            { name: "Savon Multifruit", price: "12 000", image: "produit-savon-multifruit.jpg", desc: `Un délice pour la peau : <ul class='desc-list mt-2 text-left text-sm'><li>Anti taches & Anti acné</li><li>Adoucit et répare en profondeur</li><li>Détoxifie, régénère et retient l'hydratation</li></ul>` },
+            { name: "Savon Arc-en-Ciel", price: "5 000", image: "produit-savon-arc-en-ciel.jpg", desc: `Savon réparateur 2 en 1 (visage et corps) : <ul class='desc-list mt-2 text-left text-sm'><li>Exfoliant</li><li>Anti acné & Anti taches</li><li>Traite les vergetures</li></ul>` },
+            { name: "Savon Pearl", price: "5 000", image: "produit-savon-pearl.jpg", desc: `Savon visage spécifique qui : <ul class='desc-list mt-2 text-left text-sm'><li>RÉDUIT l'apparence des taches</li><li>Assèche les boutons</li><li>Régule le sébum</li></ul>` },
+            { name: "Gommage au Café", price: "7 000", image: "produit-gommage-cafe.jpg", desc: `Un exfoliant simple et efficace. La caféine stimule la circulation et aide à réduire l'eczéma, les vergetures, la cellulite.` },
+            { name: "Lait Corps Shine", price: "15 000", image: "produit-lait-shine.jpg", desc: "Une sélection de lait extra hydratant pour le bien-être de votre peau. Il uniformise le teint en y laissant une touche d'éclat incroyable." },
+            { name: "Huile Miracle", price: "5 000", image: "produit-huile-miracle.jpg", desc: `Spécialement conçue pour traiter les parties ciblées en fonction du problème. Booster de teint qui régule et unifie.` },
+            { name: "Crème Visage Merveille", price: "7 000", image: "produit-creme-merveille.jpg", desc: `La crème Merveille : <ul class='desc-list mt-2 text-left text-sm'><li>RÉPARE</li><li>UNIFIE le teint</li><li>TRAITE les taches et les boutons</li></ul>` }
+        ];
+
+        const grid = document.getElementById('shop-grid');
+        products.forEach(p => {
+            grid.innerHTML += `
+                <div class="product-card group relative flex flex-col h-full overflow-hidden">
+                    <div class="relative h-80 overflow-hidden rounded-t-[24px] bg-fem-light">
+                        <img src="${p.image}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-fem-rosegold px-3 py-1 rounded-full text-xs font-bold shadow-sm uppercase">Nouveau</div>
+                    </div>
+                    <div class="p-6 text-center bg-white flex flex-col flex-grow">
+                        <h3 class="font-serif text-xl font-bold text-fem-dark mb-2">${p.name}</h3>
+                        <div class="text-sm text-gray-500 mb-4 flex-grow font-light leading-relaxed px-2 text-left">${p.desc}</div>
+                        <div class="text-fem-rosegold font-bold text-2xl mb-4">${p.price} FCFA</div>
+                        <button onclick="order('${p.name}', '${p.price}')" class="btn-fem w-full py-3 rounded-full font-bold uppercase tracking-widest shadow-lg flex items-center justify-center gap-2 hover:gap-3 transition-all"><i class="ph-logo ph-whatsapp text-lg"></i> Commander</button>
+                    </div>
+                </div>`;
+        });
+
+        function order(name, price) {
+            const phoneNumber = "22663274225";
+            const message = `Bonjour Perfect by Attiyyatoullah, je souhaite commander : ${name} (${price} FCFA)`;
+            window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`, '_blank');
+        }
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('open'); const icon = menuBtn.querySelector('i'); mobileMenu.classList.contains('open') ? (icon.classList.remove('ph-list'), icon.classList.add('ph-x')) : (icon.classList.remove('ph-x'), icon.classList.add('ph-list')); });
+    </script>
+</body>
+</html>

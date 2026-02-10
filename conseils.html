@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conseils Beauté - Perfect by Attiyyatoullah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { fem: { light: '#FFF5F7', pink: '#FFD1DC', rose: '#E8A0BF', gold: '#D4AF37', rosegold: '#B76E79', dark: '#5D4037', white: '#FFFFFF' } },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'], script: ['Great Vibes', 'cursive'] },
+                    backgroundImage: { 'rosegold-gradient': 'linear-gradient(135deg, #E8A0BF 0%, #B76E79 100%)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FFF5F7; color: #5D4037; }
+        .btn-fem { background: linear-gradient(135deg, #E8A0BF 0%, #B76E79 100%); color: white; transition: all 0.3s ease; }
+        .btn-fem:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(183, 110, 121, 0.4); }
+        #mobile-menu { transition: max-height 0.4s ease-in-out, opacity 0.4s ease-in-out; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+</head>
+<body class="antialiased flex flex-col min-h-screen">
+
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg shadow-sm border-b border-fem-pink/30">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo" class="h-12 w-12 rounded-full object-cover border-2 border-white shadow-md">
+                <span class="font-serif font-bold text-xl text-fem-rosegold">PERFECT</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-fem-dark/80">
+                <a href="index.html" class="hover:text-fem-rosegold transition">Accueil</a>
+                <a href="histoire.html" class="hover:text-fem-rosegold transition">À Propos</a>
+                <a href="boutique.html" class="hover:text-fem-rosegold transition">Boutique</a>
+                <a href="conseils.html" class="text-fem-rosegold font-bold border-b-2 border-fem-rosegold">Conseils</a>
+                <a href="https://wa.me/22663274225" target="_blank" class="btn-fem px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-md">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-3xl text-fem-rosegold"><i class="ph ph-list"></i></button>
+        </div>
+        <div id="mobile-menu" class="bg-white/95 backdrop-blur-xl md:hidden border-t border-fem-pink/50">
+            <div class="flex flex-col p-6 space-y-4 text-center font-medium text-fem-dark">
+                <a href="index.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light">Accueil</a>
+                <a href="boutique.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light">Boutique</a>
+                <a href="conseils.html" class="text-fem-rosegold font-bold py-2 border-b border-fem-light">Conseils</a>
+                <a href="https://wa.me/22663274225" target="_blank" class="py-2">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="pt-32 pb-12 text-center container mx-auto px-6">
+        <span class="text-fem-rosegold font-script text-3xl">Conseils Beauté</span>
+        <h1 class="font-serif text-4xl md:text-5xl font-bold mt-2 text-fem-dark">Perfect by Attiyyatoullah</h1>
+        <p class="mt-6 text-fem-dark/80 text-lg max-w-3xl mx-auto leading-relaxed font-light">
+            Chez Perfect by ATIYYATOULLAH, nous pensons que la beauté commence par une bonne connaissance de sa peau et des soins adaptés à ses besoins. Cette page a été créée pour vous accompagner et vous guider dans votre routine beauté quotidienne.
+        </p>
+    </header>
+
+    <section class="container mx-auto px-6 pb-20 flex-grow">
+        <div class="grid md:grid-cols-3 gap-8 mb-12">
+            <!-- ARTICLE 1 -->
+            <article class="bg-white rounded-[30px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-transparent hover:border-fem-pink">
+                <div class="overflow-hidden h-56 relative">
+                    <img src="conseil-nettoyage.jpg" onerror="this.src='https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?q=80&w=800&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 text-fem-dark">Le Double Nettoyage</h3>
+                    <p class="text-sm text-gray-500">Pourquoi nettoyer sa peau une seule fois ne suffit pas ? La méthode en deux étapes qui change tout.</p>
+                </div>
+            </article>
+            <!-- ARTICLE 2 -->
+            <article class="bg-white rounded-[30px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-transparent hover:border-fem-gold/50">
+                <div class="overflow-hidden h-56 relative">
+                    <img src="conseil-vitamine-c.jpg" onerror="this.src='https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?q=80&w=800&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 text-fem-dark">La Vitamine C</h3>
+                    <p class="text-sm text-gray-500">Un coup d'éclat immédiat ? Découvrez comment intégrer cet actif puissant dans votre routine.</p>
+                </div>
+            </article>
+            <!-- ARTICLE 3 -->
+            <article class="bg-white rounded-[30px] overflow-hidden shadow-sm hover:shadow-xl transition duration-300 group border border-transparent hover:border-fem-pink">
+                <div class="overflow-hidden h-56 relative">
+                    <img src="conseil-hydratation.jpg" onerror="this.src='https://images.unsplash.com/photo-1512290923902-8a9f81dc236c?q=80&w=800&auto=format&fit=crop'" class="w-full h-full object-cover group-hover:scale-110 transition duration-700">
+                </div>
+                <div class="p-6">
+                    <h3 class="font-serif text-xl font-bold mb-2 text-fem-dark">L'Hydratation</h3>
+                    <p class="text-sm text-gray-500">L'hydratation intérieure se voit-elle vraiment à l'extérieur ? Le vrai du faux sur l'eau et votre peau.</p>
+                </div>
+            </article>
+        </div>
+
+        <div class="grid md:grid-cols-2 gap-8">
+            <article class="bg-white rounded-[30px] p-8 shadow-sm hover:shadow-xl transition duration-300 border border-transparent hover:border-fem-pink group h-full">
+                <div class="w-16 h-16 bg-fem-light rounded-full flex items-center justify-center text-fem-rosegold mb-6 text-3xl group-hover:scale-110 transition"><i class="ph-fill ph-face-mask"></i></div>
+                <h3 class="font-serif text-2xl font-bold mb-4 text-fem-dark">Connaître son type de peau</h3>
+                <ul class="space-y-3 text-fem-dark/80">
+                    <li class="flex items-start gap-3"><i class="ph-bold ph-check text-fem-rosegold mt-1"></i> <span><strong>Peau sèche :</strong> tiraillements, manque d’hydratation</span></li>
+                    <li class="flex items-start gap-3"><i class="ph-bold ph-check text-fem-rosegold mt-1"></i> <span><strong>Peau grasse :</strong> excès de sébum, brillance</span></li>
+                    <li class="flex items-start gap-3"><i class="ph-bold ph-check text-fem-rosegold mt-1"></i> <span><strong>Peau mixte :</strong> zone T grasse, joues sèches</span></li>
+                    <li class="flex items-start gap-3"><i class="ph-bold ph-check text-fem-rosegold mt-1"></i> <span><strong>Peau sensible :</strong> réactions rapides, rougeurs</span></li>
+                </ul>
+            </article>
+
+            <article class="bg-white rounded-[30px] p-8 shadow-sm hover:shadow-xl transition duration-300 border border-transparent hover:border-fem-gold/50 group h-full">
+                <div class="w-16 h-16 bg-fem-light rounded-full flex items-center justify-center text-fem-gold mb-6 text-3xl group-hover:scale-110 transition"><i class="ph-fill ph-sparkle"></i></div>
+                <h3 class="font-serif text-2xl font-bold mb-4 text-fem-dark">Adopter une routine efficace</h3>
+                <ol class="space-y-4 text-fem-dark/80">
+                    <li class="flex items-start gap-3"><span class="bg-fem-gold text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">1</span><span>Nettoyer la peau pour éliminer les impuretés</span></li>
+                    <li class="flex items-start gap-3"><span class="bg-fem-gold text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">2</span><span>Hydrater pour maintenir l’équilibre cutané</span></li>
+                    <li class="flex items-start gap-3"><span class="bg-fem-gold text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">3</span><span>Protéger la peau contre les agressions extérieures</span></li>
+                    <li class="flex items-start gap-3"><span class="bg-fem-gold text-white w-6 h-6 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0 mt-0.5">4</span><span>Utiliser des soins adaptés selon ses besoins</span></li>
+                </ol>
+            </article>
+        </div>
+    </section>
+
+    <footer class="bg-fem-dark text-white py-12 text-center mt-auto rounded-t-[40px]">
+        <div class="container mx-auto px-6">
+             <h3 class="font-serif text-2xl font-bold mb-4 text-fem-pink">Perfect by Attiyyatoullah</h3>
+             <p class="text-white/60 text-sm mb-6">&copy; 2026. Tous droits réservés.</p>
+             <a href="index.html" class="text-fem-rosegold hover:text-white transition text-sm underline">Retour à l'accueil</a>
+        </div>
+    </footer>
+
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('open'); const icon = menuBtn.querySelector('i'); mobileMenu.classList.contains('open') ? (icon.classList.remove('ph-list'), icon.classList.add('ph-x')) : (icon.classList.remove('ph-x'), icon.classList.add('ph-list')); });
+    </script>
+</body>
+</html>

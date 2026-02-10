@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perfect by Attiyyatoullah - Révélez votre beauté</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        fem: { light: '#FFF5F7', pink: '#FFD1DC', rose: '#E8A0BF', gold: '#D4AF37', rosegold: '#B76E79', dark: '#5D4037', white: '#FFFFFF' }
+                    },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'], script: ['Great Vibes', 'cursive'] },
+                    backgroundImage: {
+                        'rosegold-gradient': 'linear-gradient(135deg, #E8A0BF 0%, #B76E79 100%)',
+                        'shimmer': 'linear-gradient(45deg, rgba(255,255,255,0) 40%, rgba(255,255,255,0.5) 50%, rgba(255,255,255,0) 60%)'
+                    },
+                    boxShadow: { 'glow': '0 0 20px rgba(232, 160, 191, 0.3)', 'soft': '0 10px 40px -10px rgba(183, 110, 121, 0.15)' }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FFF5F7; color: #5D4037; background-image: radial-gradient(circle at 10% 20%, rgba(255, 209, 220, 0.2) 0%, transparent 20%), radial-gradient(circle at 90% 80%, rgba(212, 175, 55, 0.1) 0%, transparent 20%); }
+        .text-shimmer { background: linear-gradient(to right, #B76E79, #D4AF37, #B76E79); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-size: 200% auto; animation: shine 5s linear infinite; }
+        @keyframes shine { to { background-position: 200% center; } }
+        .btn-fem { background: linear-gradient(135deg, #E8A0BF 0%, #B76E79 100%); color: white; transition: all 0.3s ease; }
+        .btn-fem:hover { transform: translateY(-3px); box-shadow: 0 10px 25px rgba(183, 110, 121, 0.4); filter: brightness(1.1); }
+        .product-card { background: white; border-radius: 24px; transition: all 0.4s ease; border: 1px solid transparent; }
+        .product-card:hover { transform: translateY(-8px); box-shadow: 0 20px 40px -5px rgba(232, 160, 191, 0.25); border-color: #FFD1DC; }
+        .organic-shape { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; animation: morph 8s ease-in-out infinite; overflow: hidden; }
+        @keyframes morph { 0%, 100% { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; } 34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; } 67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; } }
+        #mobile-menu { transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.4s ease; max-height: 0; opacity: 0; overflow: hidden; }
+        #mobile-menu.open { max-height: 500px; opacity: 1; }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- NAV -->
+    <nav class="fixed w-full z-50 bg-white/80 backdrop-blur-lg shadow-[0_4px_30px_rgba(0,0,0,0.03)] border-b border-fem-pink/30">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3 group">
+                <div class="relative">
+                    <div class="absolute -inset-1 bg-gradient-to-r from-fem-pink to-fem-rosegold rounded-full blur opacity-25 group-hover:opacity-50 transition"></div>
+                    <!-- LOGO -->
+                    <img src="logo.jpg" alt="Logo Perfect" class="relative h-14 w-14 rounded-full object-cover border-2 border-white shadow-md">
+                </div>
+                <div class="leading-tight">
+                    <span class="block font-serif font-bold text-2xl text-fem-rosegold tracking-wide">PERFECT</span>
+                    <span class="block font-script text-xl text-fem-dark -mt-1 ml-1">by Attiyyatoullah</span>
+                </div>
+            </a>
+            <div class="hidden md:flex items-center space-x-8 text-sm font-medium tracking-wide text-fem-dark/80">
+                <a href="index.html" class="hover:text-fem-rosegold transition relative group">Accueil</a>
+                <a href="histoire.html" class="hover:text-fem-rosegold transition relative group">À Propos</a>
+                <a href="boutique.html" class="hover:text-fem-rosegold transition relative group">Boutique</a>
+                <a href="conseils.html" class="hover:text-fem-rosegold transition relative group">Conseils</a>
+                <a href="https://wa.me/22663274225" target="_blank" class="btn-fem px-6 py-2 rounded-full text-xs font-bold uppercase tracking-wider shadow-lg shadow-fem-rosegold/30">Contactez-nous</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-3xl text-fem-rosegold focus:outline-none transition transform hover:scale-110"><i class="ph ph-list"></i></button>
+        </div>
+        <div id="mobile-menu" class="bg-white/95 backdrop-blur-xl border-t border-fem-pink/50 md:hidden">
+            <div class="flex flex-col p-6 space-y-4 text-center font-medium text-fem-dark">
+                <a href="index.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light" onclick="toggleMenu()">Accueil</a>
+                <a href="histoire.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light" onclick="toggleMenu()">À Propos</a>
+                <a href="boutique.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light" onclick="toggleMenu()">Boutique</a>
+                <a href="conseils.html" class="hover:text-fem-rosegold py-2 border-b border-fem-light" onclick="toggleMenu()">Conseils Beauté</a>
+                <a href="https://wa.me/22663274225" target="_blank" class="text-fem-rosegold font-bold py-2" onclick="toggleMenu()">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="home" class="relative pt-28 pb-16 md:pt-40 md:pb-32 overflow-hidden">
+        <div class="absolute top-0 right-0 w-[600px] h-[600px] bg-gradient-to-bl from-fem-pink/40 to-transparent rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-[500px] h-[500px] bg-gradient-to-tr from-fem-gold/10 to-transparent rounded-full blur-3xl translate-y-1/3 -translate-x-1/4"></div>
+        <div class="container relative z-10 mx-auto px-6 flex flex-col-reverse md:flex-row items-center gap-12 md:gap-20">
+            <div class="md:w-1/2 text-center md:text-left fade-in">
+                <div class="inline-block px-4 py-1.5 rounded-full bg-white border border-fem-pink shadow-sm mb-6">
+                    <span class="text-fem-rosegold font-bold tracking-widest uppercase text-[10px] md:text-xs flex items-center gap-2"><i class="ph-fill ph-sparkle"></i> Beauté Naturelle & Authentique</span>
+                </div>
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold text-fem-dark mb-6 leading-[1.1]">Révélez votre <br> <span class="text-shimmer italic font-light">Éclat Intérieur</span></h1>
+                <p class="text-fem-dark/70 text-lg mb-10 leading-relaxed max-w-lg mx-auto md:mx-0 font-light">Plongez dans un univers de douceur. Des soins d'exception créés pour sublimer chaque femme avec élégance.</p>
+                <div class="flex flex-col sm:flex-row gap-5 justify-center md:justify-start">
+                    <a href="boutique.html" class="btn-fem px-10 py-4 rounded-full font-bold text-sm uppercase tracking-widest shadow-xl shadow-fem-rose/40 hover:shadow-fem-rose/60">Commander</a>
+                    <a href="histoire.html" class="px-10 py-4 rounded-full bg-white text-fem-rosegold border border-fem-pink hover:border-fem-rosegold hover:bg-fem-light transition font-bold text-sm uppercase tracking-widest shadow-sm">Découvrir</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 relative flex justify-center">
+                <div class="relative w-full max-w-md aspect-[4/5]">
+                    <div class="absolute inset-0 bg-fem-rosegold/10 rounded-full blur-2xl transform scale-110"></div>
+                    <div class="w-full h-full organic-shape shadow-2xl border-4 border-white relative z-10">
+                        <!-- IMAGE HERO ACCUEIL -->
+                        <img src="accueil-hero.jpg" alt="Savon Arc-en-Ciel" class="w-full h-full object-cover hover:scale-105 transition duration-1000">
+                    </div>
+                    <div class="absolute bottom-10 -left-6 z-20 bg-white/90 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white flex items-center gap-3 animate-bounce" style="animation-duration: 3s;">
+                        <div class="bg-fem-pink p-2 rounded-full text-fem-rosegold"><i class="ph-fill ph-heart text-xl"></i></div>
+                        <div><p class="text-xs text-gray-500 uppercase font-bold">Coup de cœur</p><p class="font-serif font-bold text-fem-dark">Savon Arc-en-Ciel</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- VALEURS -->
+    <section class="py-16 bg-white relative">
+        <div class="container mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center relative z-10">
+            <div class="p-6 rounded-3xl hover:bg-fem-light transition duration-500 group cursor-pointer"><div class="w-16 h-16 bg-fem-pink/50 rounded-full flex items-center justify-center mx-auto mb-4 text-fem-rosegold group-hover:scale-110 transition duration-300 shadow-inner"><i class="ph-fill ph-plant text-3xl"></i></div><h3 class="font-serif font-bold text-lg text-fem-dark mb-1">100% Naturel</h3><p class="text-xs text-fem-dark/60">Ingrédients purs</p></div>
+            <div class="p-6 rounded-3xl hover:bg-fem-light transition duration-500 group cursor-pointer"><div class="w-16 h-16 bg-fem-pink/50 rounded-full flex items-center justify-center mx-auto mb-4 text-fem-rosegold group-hover:scale-110 transition duration-300 shadow-inner"><i class="ph-fill ph-diamond text-3xl"></i></div><h3 class="font-serif font-bold text-lg text-fem-dark mb-1">Qualité Premium</h3><p class="text-xs text-fem-dark/60">Formules d'exception</p></div>
+            <div class="p-6 rounded-3xl hover:bg-fem-light transition duration-500 group cursor-pointer"><div class="w-16 h-16 bg-fem-pink/50 rounded-full flex items-center justify-center mx-auto mb-4 text-fem-rosegold group-hover:scale-110 transition duration-300 shadow-inner"><i class="ph-fill ph-wallet text-3xl"></i></div><h3 class="font-serif font-bold text-lg text-fem-dark mb-1">Prix Accessibles</h3><p class="text-xs text-fem-dark/60">Le luxe pour toutes</p></div>
+            <div class="p-6 rounded-3xl hover:bg-fem-light transition duration-500 group cursor-pointer"><div class="w-16 h-16 bg-fem-pink/50 rounded-full flex items-center justify-center mx-auto mb-4 text-fem-rosegold group-hover:scale-110 transition duration-300 shadow-inner"><i class="ph-fill ph-truck text-3xl"></i></div><h3 class="font-serif font-bold text-lg text-fem-dark mb-1">Livraison Rapide</h3><p class="text-xs text-fem-dark/60">Chez vous en 24h</p></div>
+        </div>
+    </section>
+
+    <!-- BOUTIQUE -->
+    <section id="shop" class="py-24 relative overflow-hidden">
+        <div class="absolute inset-0 bg-gradient-to-b from-fem-light to-white"></div>
+        <div class="container relative z-10 mx-auto px-6">
+            <div class="text-center mb-16"><span class="text-fem-rosegold font-script text-3xl block mb-2">Nos Trésors</span><h2 class="font-serif text-4xl md:text-5xl font-bold text-fem-dark">La Collection Perfect</h2><div class="flex justify-center mt-4"><div class="w-24 h-1 bg-gradient-to-r from-transparent via-fem-rosegold to-transparent rounded-full opacity-50"></div></div></div>
+            <div id="product-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+                <!-- Produits injectés par JS -->
+            </div>
+            <div class="text-center mt-16"><a href="boutique.html" class="btn-fem px-8 py-3 rounded-full inline-flex items-center gap-3 font-bold shadow-lg">Voir tout le catalogue <i class="ph-bold ph-arrow-right"></i></a></div>
+        </div>
+    </section>
+
+    <!-- À PROPOS -->
+    <section id="about" class="py-24 bg-white relative">
+        <div class="absolute right-0 top-0 w-1/3 h-full bg-fem-pink/20 rounded-l-[100px] z-0"></div>
+        <div class="container relative z-10 mx-auto px-6">
+            <div class="flex flex-col md:flex-row items-center gap-16">
+                <div class="md:w-1/2 relative group">
+                    <div class="absolute inset-0 bg-fem-rosegold rounded-[40px] rotate-3 opacity-20 group-hover:rotate-6 transition duration-500"></div>
+                    <!-- FONDATRICE GRANDE -->
+                    <img src="fondatrice-grande.jpg" alt="Fondatrice Attiyyatoullah" class="relative rounded-[40px] shadow-2xl w-full h-auto object-cover border-4 border-white">
+                </div>
+                <div class="md:w-1/2">
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 text-fem-dark">L'Histoire de <br><span class="text-fem-rosegold italic">Perfect by Attiyyatoullah</span></h2>
+                    <div class="space-y-6 text-fem-dark/80 text-lg leading-relaxed font-light">
+                        <p><span class="text-4xl float-left mr-2 font-serif text-fem-gold">"</span>Perfect by ATIYYATOULLAH est bien plus qu’une marque de cosmétiques. C’est une histoire, une passion et un symbole de confiance en soi.</p>
+                        <p>Née d'un rêve d'enfance et d'un parcours de résilience, notre marque accompagne chaque femme dans sa quête de bien-être, d'affirmation et de sublimation de sa beauté naturelle. Nous croyons que la beauté est un état d'esprit, une harmonie entre la science et la nature.</p>
+                    </div>
+                    <div class="mt-10 flex items-center gap-5">
+                        <div class="relative">
+                            <!-- FONDATRICE PETITE -->
+                            <img src="fondatrice-petite.jpg" class="w-16 h-16 rounded-full border-2 border-fem-gold p-0.5 bg-white">
+                            <div class="absolute bottom-0 right-0 w-5 h-5 bg-fem-rosegold border-2 border-white rounded-full"></div>
+                        </div>
+                        <div><p class="font-script text-2xl text-fem-dark">Attiyyatoullah</p><p class="text-xs text-fem-rosegold uppercase tracking-wider font-bold">Fondatrice</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CONSEILS -->
+    <section id="tips" class="py-24 bg-gradient-to-br from-fem-pink/30 to-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16"><h2 class="font-serif text-4xl font-bold text-fem-dark">Secrets de Beauté</h2><p class="text-fem-rosegold font-script text-2xl mt-2">Nos astuces pour rayonner</p></div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 rounded-[30px] shadow-soft hover:shadow-lg transition group border border-transparent hover:border-fem-pink"><div class="w-16 h-16 bg-fem-light rounded-2xl flex items-center justify-center text-fem-rosegold mb-6 text-3xl group-hover:bg-fem-rosegold group-hover:text-white transition duration-300"><i class="ph-fill ph-face-mask"></i></div><h3 class="font-serif text-2xl font-bold mb-3 text-fem-dark">Connaître sa Peau</h3><p class="text-gray-500 leading-relaxed">Chaque peau est unique. Identifier son type de peau (sèche, grasse, mixte) permet de choisir les produits les plus adaptés pour un résultat optimal.</p></div>
+                <div class="bg-white p-8 rounded-[30px] shadow-soft hover:shadow-lg transition group border border-transparent hover:border-fem-gold/30"><div class="w-16 h-16 bg-fem-light rounded-2xl flex items-center justify-center text-fem-gold mb-6 text-3xl group-hover:bg-fem-gold group-hover:text-white transition duration-300"><i class="ph-fill ph-sparkle"></i></div><h3 class="font-serif text-2xl font-bold mb-3 text-fem-dark">Routine Efficace</h3><p class="text-gray-500 leading-relaxed">Une routine simple mais régulière est la clé. Nettoyez, hydratez et protégez votre peau quotidiennement pour éliminer les impuretés et maintenir l'équilibre.</p></div>
+                <div class="bg-white p-8 rounded-[30px] shadow-soft hover:shadow-lg transition group border border-transparent hover:border-fem-pink"><div class="w-16 h-16 bg-fem-light rounded-2xl flex items-center justify-center text-fem-rosegold mb-6 text-3xl group-hover:bg-fem-rosegold group-hover:text-white transition duration-300"><i class="ph-fill ph-heart"></i></div><h3 class="font-serif text-2xl font-bold mb-3 text-fem-dark">Confiance en Soi</h3><p class="text-gray-500 leading-relaxed">La beauté ne se limite pas à l'apparence. Elle reflète la confiance et le bien-être. Nos conseils vous accompagnent dans votre épanouissement personnel.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AVIS CLIENTS -->
+    <section id="reviews" class="py-24 bg-white relative">
+        <div class="absolute left-10 top-20 text-9xl text-fem-light font-serif opacity-50">“</div>
+        <div class="container mx-auto px-6 text-center relative z-10">
+            <h2 class="font-serif text-4xl font-bold mb-16 text-fem-dark">Elles nous font confiance</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- AVIS 1 -->
+                <div class="bg-fem-light p-8 rounded-tr-[40px] rounded-bl-[40px] relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <!-- CLIENT 1 -->
+                        <img src="client-1.jpg" onerror="this.src='https://i.pravatar.cc/150?u=1'" alt="User" class="w-12 h-12 rounded-full border-2 border-white shadow-md">
+                    </div>
+                    <div class="flex justify-center text-fem-gold mb-4 mt-4 text-sm"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-fem-dark/80 italic mb-4 font-serif text-lg leading-relaxed">"J'adore la texture du lait corporel, il ne colle pas et sent divinement bon ! Ma peau n'a jamais été aussi douce."</p>
+                    <div class="font-bold font-sans text-fem-rosegold uppercase tracking-widest text-xs">- Aminata S.</div>
+                </div>
+                <!-- AVIS 2 -->
+                <div class="bg-white border border-fem-pink p-8 rounded-tr-[40px] rounded-bl-[40px] relative shadow-lg transform md:-translate-y-4">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <!-- CLIENT 2 -->
+                        <img src="client-2.jpg" onerror="this.src='https://i.pravatar.cc/150?u=2'" alt="User" class="w-12 h-12 rounded-full border-2 border-white shadow-md">
+                    </div>
+                    <div class="flex justify-center text-fem-gold mb-4 mt-4 text-sm"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-fem-dark/80 italic mb-4 font-serif text-lg leading-relaxed">"Service client au top. J'ai reçu ma commande rapidement et l'emballage est magnifique, digne d'une grande marque."</p>
+                    <div class="font-bold font-sans text-fem-rosegold uppercase tracking-widest text-xs">- Sarah O.</div>
+                </div>
+                <!-- AVIS 3 -->
+                <div class="bg-fem-light p-8 rounded-tr-[40px] rounded-bl-[40px] relative">
+                    <div class="absolute -top-6 left-1/2 transform -translate-x-1/2">
+                        <!-- CLIENT 3 -->
+                        <img src="client-3.jpg" onerror="this.src='https://i.pravatar.cc/150?u=3'" alt="User" class="w-12 h-12 rounded-full border-2 border-white shadow-md">
+                    </div>
+                    <div class="flex justify-center text-fem-gold mb-4 mt-4 text-sm"><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i><i class="ph-fill ph-star"></i></div>
+                    <p class="text-fem-dark/80 italic mb-4 font-serif text-lg leading-relaxed">"Mes taches ont diminué grâce au sérum éclat. Je recommande à 100% pour celles qui veulent un teint unifié."</p>
+                    <div class="font-bold font-sans text-fem-rosegold uppercase tracking-widest text-xs">- Karine K.</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="bg-fem-dark text-white pt-20 pb-10 rounded-t-[50px] mt-10">
+        <div class="container mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h3 class="font-serif text-3xl font-bold mb-6 text-fem-pink">Perfect by Attiyyatoullah</h3>
+                    <p class="text-white/70 text-sm leading-relaxed mb-8">Votre destination beauté pour des produits authentiques et de qualité. Révélez la meilleure version de vous-même avec nos soins naturels.</p>
+                    <div class="flex gap-4">
+                        <a href="https://www.facebook.com/share/1WMpmmSTx1/?mibextid=wwXIfr" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-fem-rosegold hover:text-white transition duration-300"><i class="ph-logo ph-facebook-logo text-xl"></i></a>
+                        <a href="https://www.instagram.com/perfect_by_attiyyatoullah?igsh=Z2lwaWM5YTA4azZl&utm_source=qr" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-fem-rosegold hover:text-white transition duration-300"><i class="ph-logo ph-instagram-logo text-xl"></i></a>
+                        <a href="https://www.tiktok.com/@the_real_sunn?_r=1&_t=ZS-93nr66Vel1U" target="_blank" class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-fem-rosegold hover:text-white transition duration-300"><i class="ph-logo ph-tiktok-logo text-xl"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-serif text-xl font-bold mb-6 text-white border-b border-fem-rosegold/30 pb-2 inline-block">Liens Rapides</h4>
+                    <ul class="space-y-3 text-white/70 text-sm">
+                        <li><a href="boutique.html" class="hover:text-fem-pink transition flex items-center gap-2"><i class="ph-bold ph-caret-right text-fem-rosegold"></i> Boutique</a></li>
+                        <li><a href="histoire.html" class="hover:text-fem-pink transition flex items-center gap-2"><i class="ph-bold ph-caret-right text-fem-rosegold"></i> Notre Histoire</a></li>
+                        <li><a href="conseils.html" class="hover:text-fem-pink transition flex items-center gap-2"><i class="ph-bold ph-caret-right text-fem-rosegold"></i> Conseils</a></li>
+                        <li><a href="#" class="hover:text-fem-pink transition flex items-center gap-2"><i class="ph-bold ph-caret-right text-fem-rosegold"></i> Mentions Légales</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-serif text-xl font-bold mb-6 text-white border-b border-fem-rosegold/30 pb-2 inline-block">Contactez-nous</h4>
+                    <ul class="space-y-6 text-white/70 text-sm">
+                        <li class="flex items-start gap-4"><div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-fem-pink shrink-0"><i class="ph-fill ph-whatsapp-logo text-xl"></i></div><span><span class="block text-white font-bold mb-1">WhatsApp</span>+226 63 27 42 25<br><span class="text-xs opacity-60">Lun - Sam : 09h - 19h</span></span></li>
+                        <li class="flex items-center gap-4"><div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-fem-pink shrink-0"><i class="ph-fill ph-envelope text-xl"></i></div><span>contact@perfect-attiya.com</span></li>
+                        <li class="flex items-center gap-4"><div class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-fem-pink shrink-0"><i class="ph-fill ph-map-pin text-xl"></i></div><span>Ouagadougou, Burkina Faso</span></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-8 text-center text-xs text-white/40">&copy; 2026 Perfect by Attiyyatoullah. Tous droits réservés.</div>
+        </div>
+    </footer>
+
+    <script>
+        const products = [
+            { id: 1, name: "Magic Oil Quintos", price: "5 000", image: "produit-magic-oil.jpg", desc: "Huile spéciale aux vitamines pour atténuer les quintos et vergetures." },
+            { id: 2, name: "Gel Douche Royale", price: "15 000", image: "produit-gel-douche.jpg", desc: "Nettoie, nourrit, apaise et protège pour une peau moelleuse." },
+            { id: 3, name: "Savon Multifruit", price: "12 000", image: "produit-savon-multifruit.jpg", desc: "Anti-taches, anti-acné, exfolie et unifie pour un teint éclatant." }
+        ];
+
+        const productGrid = document.getElementById('product-grid');
+        products.forEach(product => {
+            const productHTML = `
+                <div class="product-card group relative">
+                    <div class="relative h-80 overflow-hidden rounded-t-[24px] bg-fem-light">
+                        <img src="${product.image}" alt="${product.name}" class="w-full h-full object-cover group-hover:scale-110 transition duration-1000">
+                        <div class="absolute inset-0 bg-gradient-to-t from-fem-rosegold/80 to-transparent opacity-0 group-hover:opacity-100 transition duration-500 flex items-end justify-center pb-6">
+                            <a href="boutique.html" class="bg-white text-fem-rosegold px-8 py-3 rounded-full font-bold shadow-lg hover:scale-105 transition transform">Aperçu Rapide</a>
+                        </div>
+                        <div class="absolute top-4 right-4 bg-white/90 backdrop-blur-sm text-fem-rosegold px-3 py-1 rounded-full text-xs font-bold shadow-sm uppercase tracking-wide">Nouveau</div>
+                    </div>
+                    <div class="p-6 text-center bg-white rounded-b-[24px]">
+                        <h3 class="font-serif text-2xl font-bold text-fem-dark mb-2 group-hover:text-fem-rosegold transition">${product.name}</h3>
+                        <p class="text-sm text-gray-400 mb-4 font-light">${product.desc}</p>
+                        <div class="flex items-center justify-between mt-4 border-t border-dashed border-gray-100 pt-4">
+                            <div class="text-fem-rosegold font-bold text-xl">${product.price} <span class="text-sm">FCFA</span></div>
+                            <button onclick="orderProduct('${product.name}', '${product.price}')" class="w-12 h-12 rounded-full bg-fem-light flex items-center justify-center text-fem-rosegold hover:bg-fem-rosegold hover:text-white transition shadow-sm group-hover:shadow-glow"><i class="ph-bold ph-bag-simple text-xl"></i></button>
+                        </div>
+                    </div>
+                </div>`;
+            productGrid.innerHTML += productHTML;
+        });
+
+        function orderProduct(name, price) {
+            const phoneNumber = "22663274225"; 
+            const message = `Bonjour Perfect by Attiyyatoullah, je souhaite commander le produit suivant depuis l'accueil :\n\n- ${name} (${price} FCFA)\n\nPouvez-vous me confirmer la disponibilité et les frais de livraison ? Merci !`;
+            const whatsappURL = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
+            window.open(whatsappURL, '_blank');
+        }
+
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        function toggleMenu() {
+            mobileMenu.classList.toggle('open');
+            const icon = menuBtn.querySelector('i');
+            if (mobileMenu.classList.contains('open')) { icon.classList.remove('ph-list'); icon.classList.add('ph-x'); } 
+            else { icon.classList.remove('ph-x'); icon.classList.add('ph-list'); }
+        }
+        menuBtn.addEventListener('click', toggleMenu);
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notre Histoire - Perfect by Attiyyatoullah</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/phosphor-icons"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: { fem: { light: '#FFF5F7', pink: '#FFD1DC', rosegold: '#B76E79', dark: '#5D4037', white: '#FFFFFF' } },
+                    fontFamily: { sans: ['Montserrat', 'sans-serif'], serif: ['Playfair Display', 'serif'], script: ['Great Vibes', 'cursive'] }
+                }
+            }
+        }
+    </script>
+    <style>body { background-color: #FFFFFF; color: #5D4037; } .btn-fem { background: linear-gradient(135deg, #E8A0BF 0%, #B76E79 100%); color: white; }</style>
+</head>
+<body class="flex flex-col min-h-screen">
+    <nav class="fixed w-full z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-fem-pink/30">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="flex items-center gap-3">
+                <img src="logo.jpg" alt="Logo" class="h-12 w-12 rounded-full border-2 border-white shadow-md object-cover">
+                <span class="font-serif font-bold text-xl text-fem-rosegold">PERFECT</span>
+            </a>
+            <div class="hidden md:flex space-x-8 text-sm font-medium text-fem-dark">
+                <a href="index.html" class="hover:text-fem-rosegold transition">Accueil</a>
+                <a href="histoire.html" class="text-fem-rosegold font-bold border-b-2 border-fem-rosegold">À Propos</a>
+                <a href="boutique.html" class="hover:text-fem-rosegold transition">Boutique</a>
+                <a href="conseils.html" class="hover:text-fem-rosegold transition">Conseils</a>
+                <a href="https://wa.me/22663274225" target="_blank" class="btn-fem px-6 py-2 rounded-full text-xs font-bold uppercase shadow-md">Contact</a>
+            </div>
+            <button id="menu-btn" class="md:hidden text-3xl text-fem-rosegold"><i class="ph ph-list"></i></button>
+        </div>
+        <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-t border-fem-pink/30 shadow-lg flex flex-col items-center py-4 space-y-4">
+             <a href="index.html" class="hover:text-fem-rosegold transition">Accueil</a>
+             <a href="histoire.html" class="text-fem-rosegold font-bold">À Propos</a>
+             <a href="boutique.html" class="hover:text-fem-rosegold transition">Boutique</a>
+             <a href="conseils.html" class="hover:text-fem-rosegold transition">Conseils</a>
+             <a href="https://wa.me/22663274225" target="_blank" class="hover:text-fem-rosegold transition">Contact</a>
+        </div>
+    </nav>
+
+    <section class="py-32 relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-1/2 h-full bg-fem-light rounded-l-[100px] -z-10"></div>
+        <div class="absolute bottom-0 left-0 w-64 h-64 bg-fem-pink/20 rounded-full blur-3xl -z-10"></div>
+        <div class="container relative z-10 mx-auto px-6 flex flex-col md:flex-row items-start gap-16">
+            <div class="md:w-1/2 relative sticky top-32">
+                <div class="absolute inset-0 border-4 border-fem-rosegold rounded-[40px] transform translate-x-4 translate-y-4 -z-10"></div>
+                 <img src="fondatrice-grande.jpg" alt="Histoire de la marque" class="relative rounded-[40px] shadow-2xl w-full h-auto object-cover">
+            </div>
+            <div class="md:w-1/2">
+                <span class="text-fem-rosegold font-bold tracking-widest uppercase text-sm mb-2 block">Notre Essence</span>
+                <h1 class="font-serif text-4xl md:text-5xl font-bold mb-8 text-fem-dark leading-tight">À propos de <br><span class="text-fem-rosegold italic">Perfect by ATIYYATOULLAH</span></h1>
+                <div class="space-y-6 text-lg font-light leading-relaxed text-fem-dark/80 text-justify">
+                    <p class="font-medium text-xl text-fem-rosegold">Perfect by ATIYYATOULLAH est bien plus qu’une marque de cosmétiques. C’est une histoire, une passion et un symbole de confiance en soi.</p>
+                    <p>La marque est née d’un rêve d’enfance. Depuis toute petite, la fondatrice était fascinée par l’univers de la beauté et des cosmétiques.</p>
+                    <p>En grandissant, cette curiosité s’est transformée en passion. Elle a commencé à apprendre, rechercher et découvrir le monde des soins. Mais <strong>Perfect by ATIYYATOULLAH</strong> est aussi née d’un parcours personnel marqué par des épreuves. Victime de harcèlement, la fondatrice a longtemps manqué de confiance en elle.</p>
+                    <p>La création de cette marque a été une renaissance. Elle lui a permis de s’affirmer et de transformer ses expériences en une force positive.</p>
+                    <div class="bg-fem-light p-8 rounded-3xl border-l-4 border-fem-rosegold mt-8 relative">
+                         <i class="ph-fill ph-quotes text-4xl text-fem-rosegold/20 absolute top-4 left-4"></i>
+                        <p class="italic font-serif text-xl text-fem-dark relative z-10">"Perfect by ATIYYATOULLAH accompagne chaque personne dans sa quête de bien-être, d’affirmation et de sublimation de sa beauté naturelle."</p>
+                    </div>
+                </div>
+                <div class="mt-12 flex items-center gap-6 pt-8 border-t border-gray-100">
+                    <img src="fondatrice-petite.jpg" alt="Fondatrice" class="w-20 h-20 rounded-full border-4 border-white shadow-lg object-cover">
+                    <div><p class="font-script text-3xl text-fem-rosegold">Attiyyatoullah</p><p class="text-xs text-fem-dark uppercase tracking-wider font-bold mt-1">Fondatrice & Créatrice</p></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-white text-fem-dark py-8 text-center mt-auto">
+        <div class="container mx-auto px-6">
+            <p class="text-xs opacity-60 mb-2">&copy; 2026 Perfect by Attiyyatoullah.</p>
+            <a href="index.html" class="text-fem-rosegold hover:text-fem-dark transition text-sm font-medium">Retour à l'accueil</a>
+        </div>
+    </footer>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        menuBtn.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); const icon = menuBtn.querySelector('i'); if (!mobileMenu.classList.contains('hidden')) { icon.classList.remove('ph-list'); icon.classList.add('ph-x'); } else { icon.classList.remove('ph-x'); icon.classList.add('ph-list'); } });
+    </script>
+</body>
+</html>
